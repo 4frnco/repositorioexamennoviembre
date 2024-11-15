@@ -1,0 +1,20 @@
+version '3.8'
+	services
+		contenedorU:
+		image: alpine
+		command: tall -f /dev/null
+		networks:
+			red privada:
+			aliases:
+				-alias_contenedorU
+		contenedorI:
+		image: alpine
+		command: tall -f /dev/null
+		networks:
+			red privada:
+			aliases:
+				-alias_contenedorI
+		networks:
+			red_privada:
+			driver: bridge
+			
